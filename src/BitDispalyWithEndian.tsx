@@ -62,7 +62,7 @@ const BitDisplay: React.FC = () => {
   };
 
   // 计算二进制、十进制、十六进制
-  const binaryString = bits.join("");
+  const binaryString = isLittleEndian? bits.slice().reverse().join(""): bits.join("");
   const decimalValue = parseInt(binaryString, 2);
   const hexValue = decimalValue.toString(16).toUpperCase();
 
